@@ -6,6 +6,8 @@ const users = require('./routes/users');
 const plants = require('./routes/plants');
 const favoriteList = require('./routes/favoriteList');
 
+const error = require('./error')
+
 
 app.use('/users', users);
 app.use('/plants', plants);
@@ -16,6 +18,12 @@ app.get('/', (req, res) => {
     res.send("Home Page")
 })
 
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    res.status(err.status || 500);
+    res.json({ error: err.message });
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
