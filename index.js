@@ -9,6 +9,11 @@ const favoriteList = require('./routes/favoriteList');
 const error = require('./error')
 
 
+// Middleware to parse JSON 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
 app.use('/users', users);
 app.use('/plants', plants);
 app.use('/favoriteList', favoriteList);
