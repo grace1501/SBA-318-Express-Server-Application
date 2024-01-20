@@ -9,14 +9,14 @@ Use a template engine to render views with Express.
 Interact with a self-made API through HTML forms.
 
 ## List of all routes in this application:
-GET / 
-GET /users
-POST /users
-GET /users/:id
-PATCH /users/:id
-DELETE /users/:id
-GET /plants
-GET /plants/:id
-GET /favoriteList
-GET /favoriteList/:id
+- GET / 
+- GET /users
+- POST /users
+- GET /users/:id
+- PATCH /users/:id
+- DELETE /users/:id
+- GET /plants
+- GET /plants/:id
+- GET /favoriteList
+- GET /favoriteList/:id
 
