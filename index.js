@@ -18,15 +18,18 @@ app.use('/users', users);
 app.use('/plants', plants);
 app.use('/favoriteList', favoriteList);
 
+
+// View engine: ejs
+app.set('view engine', 'ejs');
 // styling for page: css as static file
-app.use(express.static("./styles"));
+app.use(express.static("."));
+app.use(express.static("/styles"));
 
-const path = require('path');
 
+// Root route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './main.html'));
+    res.render("main");
 })
-
 
 // Error handling middleware
 app.use((err, req, res, next) => {

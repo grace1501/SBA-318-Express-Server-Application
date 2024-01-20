@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const router = express.Router();
 
 const plants = require('../data/plants');
@@ -12,16 +11,6 @@ const fs = require('fs');
 // styling for page: css as static file
 router.use(express.static('./styles'));
 
-app.engine('page', (filePath, options, callback) => {
-    fs.readFile(filePath, (err, content) => {
-        if (err) return callback(err);
-
-        const rendered = content.toString()
-                                .replace('#plant-name#', `${options.name}`)
-                                .replace('#img-source#', `${options.imgLink}`);
-        return callback(null, rendered);
-    })
-})
 
 
 router
