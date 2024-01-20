@@ -19,4 +19,5 @@ Interact with a self-made API through HTML forms.
 - GET /plants/:id
 - GET /favoriteList
 - GET /favoriteList/:id
+- GET /favoriteList?userId=VALUE
 
