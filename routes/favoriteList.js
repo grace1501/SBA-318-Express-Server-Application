@@ -10,7 +10,15 @@ router
     .route('/')
     // Get all favoriteList
     .get((req, res) => {
-    res.json(favoriteList);
+        // If there is a query - search for the list belong to specify user
+        const userId = req.query.userId;
+        if (userId) {
+            const favoriteListByUser = favoriteList.find((item) => item.id == userId);
+            res.json(favoriteListByUser);
+        } else {
+            res.json(favoriteList);
+        }
+    
 })
 
 router
